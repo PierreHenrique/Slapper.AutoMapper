@@ -486,7 +486,15 @@ namespace Slapper
                             // Try to find any keys that start with the current member name
                             var nestedDictionary = dictionary.Where(x => x.Key.ToLower().StartsWith(memberName + "_")).ToList();
 
-                            // If there weren't any keys
+                            if (!nestedDictionary.Any())
+                            {
+                                nestedDictionary = dictionary.Where(x => x.Key.ToLower().StartsWith(memberType.Name.ToLower() + "_")).ToList();
+                                
+                                if(nestedDictionary.Any())
+                                    memberName = memberType.Name.ToLower();
+                            }
+
+                                // If there weren't any keys
                             if (!nestedDictionary.Any())
                             {
                                 // And the parent instance was not null

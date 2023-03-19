@@ -177,8 +177,16 @@ namespace Slapper
                 {
                     instanceCache.Add(key, instance);
                 }
-
-                var caseInsensitiveDictionary = new Dictionary<string, object>(properties, StringComparer.OrdinalIgnoreCase);
+                
+                var caseInsensitiveDictionary = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+                
+                foreach (var keyValuePair in properties)
+                {
+                    if (caseInsensitiveDictionary.ContainsKey(keyValuePair.Key) && caseInsensitiveDictionary[keyValuePair.Key] == keyValuePair.Value)
+                        continue;
+                    
+                    caseInsensitiveDictionary.Add(keyValuePair.Key, keyValuePair.Value);
+                }
 
                 InternalHelpers.Map(caseInsensitiveDictionary, instance);
             }

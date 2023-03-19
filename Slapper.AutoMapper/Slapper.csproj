@@ -9,7 +9,6 @@
         <PackageLicenseUrl></PackageLicenseUrl>
         <RepositoryUrl>https://github.com/SlapperAutoMapper/Slapper.AutoMapper</RepositoryUrl>
         <Version>2.0.5</Version>
-        <TargetFrameworks>netstandard2.1;net47</TargetFrameworks>
         <Product>Slapper.AutoMapper.Core</Product>
         <Copyright>Copyright (c) 2016, Randy Burden and contributors. All rights reserved.</Copyright>
         <Description>Slapper.AutoMapper is a mapping library that can convert dynamic data into static types and populate complex nested child objects.</Description>

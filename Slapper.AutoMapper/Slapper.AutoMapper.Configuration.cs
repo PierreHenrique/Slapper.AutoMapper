@@ -58,6 +58,7 @@ namespace Slapper
             {
                 IdentifierConventions.Add(type => "Id");
                 IdentifierConventions.Add(type => type.Name + "Id");
+                IdentifierConventions.Add(type => $"{type.Name}_Id");
                 IdentifierConventions.Add(type => type.Name + "Nbr");
             }
 
